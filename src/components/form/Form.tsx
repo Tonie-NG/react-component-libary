@@ -1,15 +1,22 @@
 import React from "react";
 
+interface Inputdetails {
+  name: string;
+  placeholder: string;
+  required: boolean;
+  type: string;
+}
+
 interface FormProps {
-  input_name: string[];
+  inputs: Inputdetails[];
 }
 
 function Form(props: FormProps) {
-  const { input_name } = props;
+  const { inputs } = props;
   return (
     <form>
-      {input_name.map((input) => (
-        <input name={input} />
+      {inputs.map((input) => (
+        <input name={input.name} />
       ))}
     </form>
   );
